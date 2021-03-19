@@ -1,0 +1,111 @@
+#hero {
+  text-align: left;
+  display: flex;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #hero {
+    margin-top: 6rem;
+  }
+}
+
+#hero .description {
+  display: grid;
+  align-content: center;
+}
+
+#hero h1 {
+  color: var(--heading-color);
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#hero p {
+  color: var(--text-color);
+  font-weight: 200;
+  font-size: 16px;
+}
+
+#subscribe {
+  padding: 60px;
+  background: url("../../../../assets/images/subscribe-bg.jpg") center center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+#subscribe:before {
+  content: "";
+  background: rgba(6, 12, 34, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  #subscribe {
+    background-attachment: fixed;
+  }
+
+  #subscribe {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #subscribe {
+    padding: 35px;
+  }
+
+  #subscribe button.ms-2 {
+    margin: 7px auto;
+  }
+}
+
+#subscribe .section-header h2,
+#subscribe .section-header p {
+  color: #fff;
+  text-align: center;
+}
+
+#subscribe input {
+  background: var(--main-bg-color);
+  color: var(--text-color);
+  border: 0;
+  outline: none;
+  margin: 0;
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+@media (min-width: 767px) {
+  #subscribe input {
+    min-width: 400px;
+  }
+}
+
+#subscribe button {
+  display: block;
+  padding: 9px 25px;
+  cursor: pointer;
+  background: var(--main-linear-gradient);
+  color: #fff;
+  transition: all 0.3s ease;
+  outline: none;
+  font-size: 14px;
+  border-radius: 50px;
+  border-width: 0;
+  margin: 0 auto;
+}

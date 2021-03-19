@@ -1,1 +1,314 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other theme files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~swiper/swiper-bundle.min.css";
+
+:root {
+  --main-linear-gradient: linear-gradient(90deg, #a109d5, #d9147d);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--main-bg-color);
+}
+
+a {
+  color: var(--heading-color);
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: var(--heading-color);
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: var(--heading-color);
+}
+
+.main-page {
+  margin-top: 70px;
+}
+
+svg {
+  fill: var(--main-bg-color);
+}
+
+.js-animate-part {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+js-animate-part {
+  opacity: 0;
+  transition: opacity 0.75s linear, transform 1.2s cubic-bezier(.245,.495,0,.99);
+  transition-delay: 0s, 0s;
+  transform: translateY(2.5rem);
+}
+
+/* Prelaoder */
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  /* background: #fff url("../img/preloader.svg") no-repeat center center; */
+}
+
+/*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: var(--heading-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: var(--heading-color);
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: var(--heading-color);
+  color: var(--heading-color);
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Sections Header
+  --------------------------------*/
+.section-header {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-header::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--main-linear-gradient);
+  bottom: 20px;
+  left: calc(50% - 25px);
+  border-radius: 50px;
+}
+
+.section-header h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.section-with-bg {
+  background-color: var(--heading-color);
+}
+
+.upper-case {
+  text-transform: uppercase;
+}
+
+
+.myapp-login-dialog .mat-dialog-container {
+  background-color: var(--main-bg-color);
+}
+
+.mat-form-field .mat-form-field-flex {
+  background-color: var(--secondary-bg-color);
+  padding: 0 15px;
+}
+
+.mat-form-field .mat-form-field-label-wrapper .mat-form-field-label {
+  color: var(--text-color);
+}
+
+.mat-form-field .mat-form-field-suffix .mat-icon {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.mat-form-field .mat-form-field-infix .mat-input-element {
+  color: var(--heading-color);
+}
+
+
+
+/*----------- c Button -----------*/
+
+.c-cta--work--grid {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  width: 33.32%;
+}
+
+.c-cta--work {
+  background-color: var(--secondary-bg-color);
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.c-cta--work .c-cta--work__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.c-button {
+  font-weight: 700;
+  position: relative;
+  font-size: 1.125rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  cursor: pointer;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent !important;
+  padding: 1.25rem 2.25rem 1.25rem 4rem;
+  color: var(--text-color);
+}
+
+.c-button--black::before {
+  background: var(--main-linear-gradient);
+}
+
+.c-button::before {
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--main-linear-gradient);
+  border-radius: 3.5rem;
+  transition: opacity .5s ease, width .5s cubic-bezier(0.75, 0, 0.175, 1);
+}
+
+.c-button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.c-button .c-button__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  position: absolute;
+  transition: transform .5s ease;
+  transition-delay: 0s;
+  transition-delay: .1s;
+  left: .8rem;
+}
+
+.c-button--black .c-arrow__g {
+  fill: white;
+}
+
+.c-button__inner {
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+  transition: color .5s ease;
+  transition-delay: 0s;
+  transition-delay: .2s;
+}
+
+.c-cta--work .c-cta--work__illustration {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  transition: transform 1.2s cubic-bezier(0.75, 0, 0.125, 0.9);
+  transition-delay: 0s;
+  transition-delay: 0.15s;
+}
+
+.c-cta--work:hover .c-button {
+  outline: 0;
+  color: #fff;
+}
+
+.c-button--black:hover, .c-button--black:focus {
+  color: #fff;
+}
+
+.c-button:hover, .c-button:focus {
+  outline: 0;
+}
+
+.c-cta--work:hover .c-button::before {
+  width: 100%;
+}
+
+.c-button:hover::before, .c-button:focus::before {
+  width: 100%;
+}
+
+.c-cta--work:hover .c-button .c-button__arrow {
+  transform: translateX(75%) translateY(-50%);
+}
+
+.c-button:hover .c-button__arrow, .c-button:focus .c-button__arrow {
+  transform: translateX(75%) translateY(-50%);
+}
+
+.c-cta--work:hover .c-button {
+  color: #fff;
+}
+
+.c-cta--work:hover .c-button .c-arrow rect {
+  transform: scale(1, 1);
+  transition: transform .2s ease;
+  transition-delay: 0s;
+  transition-delay: .2s;
+}
+
+.c-button:hover .c-arrow rect, .c-button:focus .c-arrow rect {
+  transform: scale(1, 1);
+  transition: transform .2s ease;
+}

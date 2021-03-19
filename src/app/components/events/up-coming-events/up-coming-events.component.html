@@ -1,0 +1,44 @@
+<section id="up-coming-events">
+
+  <div class="container" style="padding: 0;">
+    <div class="section-header">
+      <h2>up coming events</h2>
+    </div>
+  </div>
+
+  <div class="events-wrap-full">
+    <div class="events-grid">
+
+      <ng-container *ngFor="let evenement of evenements(); index as i">
+        <div class="event-col" style="{{ 'transition-delay: ' + i + 's;' }}">
+          <a href="#" class="event-link">
+            <div class="event-inner">
+              <div class="event-image">
+                <img alt="BUBKA Work Mora Header1" src="../../../../assets/images/subscribe-bg.jpg">
+              </div>
+              <div class="event-text">
+                <div class="event-title">
+                  <h2 style="color: #ffffff;">Getting better results on social than cute cat clips? <span
+                    class="is-wrapped">Yes, you can! </span></h2>
+                </div>
+                <div class="event-planning">Mora</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </ng-container>
+
+      <div class="event-col c-cta--work--grid | js-animate-part" style="transition-delay: 0.2s;">
+        <div class="c-cta c-cta--work">
+          <div class="c-cta--work__inner">
+            <app-c-button [route]="''" [message]="'view more work'"></app-c-button>
+          </div>
+          <!--          <div class="c-cta&#45;&#45;work__illustration">-->
+          <!--            <img data-src="/illustrations/Cat.png" class=" ls-is-cached lazyloaded" alt="it's a cat!"-->
+          <!--                 src="/illustrations/Cat.png">-->
+          <!--          </div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

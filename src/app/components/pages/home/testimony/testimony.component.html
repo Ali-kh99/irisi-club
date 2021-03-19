@@ -1,0 +1,25 @@
+<div class="reviews">
+  <div id="review-scroll" class="list slider">
+
+    <div class="container">
+      <div class="section-header">
+        <h2>testimony</h2>
+      </div>
+    </div>
+
+    <div class="slide-track">
+      <div class="review" *ngFor="let testimony of testimonies(); index as i">
+        <div *ngIf="testimony.user.media; else elseBlock">
+          <img src="{{ testimony.user.media.url }}" alt="user avatar">
+        </div>
+        <ng-template #elseBlock>
+          <img src="assets/images/unkown-user.jpg" alt="Ahmed NFAIHI avatar">
+        </ng-template>
+        <div class="back">
+          <p class="name"><span class="upper-case">{{ testimony.user.nom }}</span> {{ testimony.user.prenom }}</p>
+          <p class="text">{{ testimony.avis }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

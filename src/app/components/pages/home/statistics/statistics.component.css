@@ -1,0 +1,132 @@
+.statistics {
+  background-position-y: -1px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--secondary-bg-color);
+  height: auto;
+}
+
+.statistics .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  top: -85px;
+}
+
+@media (max-width: 1024px) {
+  .statistics .container {
+    top: -20px;
+  }
+}
+
+.statistics .item {
+  margin: 1rem 1.5rem;
+  padding: 0 1rem;
+  height: 250px;
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#bottom-wave {
+  position: relative;
+  top: -170px;
+}
+
+
+#container {
+  font-family: Museo Sans Cyrl, trebuchet ms, arial, sans-serif;
+  position: relative;
+  height: 100vh;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+#container .content {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pjs-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transform: translate(-100vw, -100vh);
+  background-color: #fff;
+  box-shadow: 0 4px 50px rgba(0, 117, 255, .25);
+  background-position: 50%;
+  background-size: cover;
+  background-color: var(--main-bg-color);
+  transition: background .2s ease, box-shadow .2s ease;
+  will-change: transform;
+}
+.pjs-circle:hover {
+  box-shadow: 0 4px 50px rgba(243, 44, 83, .5);
+}
+
+.pjs-circle.metrics.hover {
+  transform: scale(1.1);
+}
+
+.pjs-circle.metrics.hover::before {
+  content: "";
+  opacity: 1;
+  transition: opacity .15s ease-in-out;
+  background-image: url('src/assets/images/metrics/planet.svg');
+  background-position: 50%;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.pjs-circle.metrics span {
+  color: var(--heading-color);
+}
+
+.pjs-circle .front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #393939;
+}
+
+.pjs-circle .front .main {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.pjs-circle .front .sub {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: #393939;
+  padding: 0 20px;
+}
+
+.pjs-circle .back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 20px;
+}
+
+.pjs-circle .back .icon {
+  width: 60%;
+}
