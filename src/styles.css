@@ -5,6 +5,7 @@
 
 :root {
   --main-linear-gradient: linear-gradient(90deg, #a109d5, #d9147d);
+  --main-color-bar: #d9147d;
 }
 
 html, body {
@@ -64,7 +65,7 @@ svg {
 
 js-animate-part {
   opacity: 0;
-  transition: opacity 0.75s linear, transform 1.2s cubic-bezier(.245,.495,0,.99);
+  transition: opacity 0.75s linear, transform 1.2s cubic-bezier(.245, .495, 0, .99);
   transition-delay: 0s, 0s;
   transform: translateY(2.5rem);
 }
@@ -172,7 +173,6 @@ js-animate-part {
 .mat-form-field .mat-form-field-infix .mat-input-element {
   color: var(--heading-color);
 }
-
 
 
 /*----------- c Button -----------*/
@@ -311,4 +311,15 @@ js-animate-part {
 .c-button:hover .c-arrow rect, .c-button:focus .c-arrow rect {
   transform: scale(1, 1);
   transition: transform .2s ease;
+}
+
+/* register and login style */
+.btn-login {
+  background: var(--main-linear-gradient);
+  color: #fff;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
 }

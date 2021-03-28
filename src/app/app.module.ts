@@ -16,10 +16,21 @@ import {TestimonyComponent} from './components/pages/home/testimony/testimony.co
 import {SignInComponent} from './dialogs/sign-in/sign-in.component';
 import {SignUpComponent} from './dialogs/sign-up/sign-up.component';
 import {NgxSpinnerModule} from 'ngx-spinner';
-import { StatisticsComponent } from './components/pages/home/statistics/statistics.component';
+import {StatisticsComponent} from './components/pages/home/statistics/statistics.component';
 import {FormsModule} from '@angular/forms';
 import {MaterialModule} from './modules/material/material.module';
-import { CButtonComponent } from './components/shared/c-button/c-button.component';
+import {CButtonComponent} from './components/shared/c-button/c-button.component';
+// for HttpClient import:
+import {LoadingBarHttpClientModule} from '@ngx-loading-bar/http-client';
+
+// for Router import:
+import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
+
+// for Core import:
+import {LoadingBarModule} from '@ngx-loading-bar/core';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {NotifierModule} from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -44,7 +55,13 @@ import { CButtonComponent } from './components/shared/c-button/c-button.componen
     AppRoutingModule,
     NgxSpinnerModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    LoadingBarHttpClientModule,
+    LoadingBarRouterModule,
+    LoadingBarModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NotifierModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],

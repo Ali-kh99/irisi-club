@@ -1,11 +1,17 @@
 <app-header></app-header>
-<!-- <ngx-spinner
-  bdColor = "var(--main-bg-color)"
-  size = "medium"
-  color = "var(--play-icon-color-secondary)"
-  type = "pacman"
-  [fullScreen] = "true">
-  <p style="color: var(--play-icon-color-secondary); margin-top: 25px;"> Loading... </p>
-</ngx-spinner> -->
+<ngx-loading-bar
+  color="var(--main-color-bar)"
+>
+
+</ngx-loading-bar>
+<!--<ngx-spinner-->
+<!--  bdColor="var(&#45;&#45;main-bg-color)"-->
+<!--  size="medium"-->
+<!--  color="var(&#45;&#45;play-icon-color-secondary)"-->
+<!--  type="pacman"-->
+<!--  [fullScreen]="true">-->
+<!--  <p style="color: var(&#45;&#45;play-icon-color-secondary); margin-top: 25px;"> Loading... </p>-->
+<!--</ngx-spinner>-->
+
 <router-outlet></router-outlet>
 <app-footer></app-footer>

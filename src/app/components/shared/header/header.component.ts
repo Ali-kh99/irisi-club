@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {faUser, faTimes, faBars} from '@fortawesome/free-solid-svg-icons';
-import {ThemeService} from '../../../modules/services/theme.service';
-import {SignInComponent} from '../../../dialogs/sign-in/sign-in.component';
-import {SignUpComponent} from '../../../dialogs/sign-up/sign-up.component';
-import {MatDialog} from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { faUser, faTimes, faBars } from '@fortawesome/free-solid-svg-icons';
+import { ThemeService } from '../../../modules/services/theme.service';
+import { SignInComponent } from '../../../dialogs/sign-in/sign-in.component';
+import { SignUpComponent } from '../../../dialogs/sign-up/sign-up.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -18,11 +20,20 @@ export class HeaderComponent implements OnInit {
   activeMobileNavbar = false;
   activeMobileNavbarDropdown = false;
   isLightTheme = false;
+  isLogged = false;
+  login = '';
 
-  constructor(private themeService: ThemeService, private dialog: MatDialog) {
+  constructor(private themeService: ThemeService, private dialog: MatDialog, private authService: AuthService) {
   }
 
   ngOnInit(): void {
+    this.authService.getAuth().subscribe(auth => {
+      if (auth) {
+        this.isLogged = true;
+        console.log(auth);
+        this.login = auth.displayName;
+      }
+    });
   }
 
   public toggleMobileNavbar(): void {
@@ -63,7 +74,10 @@ export class HeaderComponent implements OnInit {
 
   openDialogRegister(): void {
     const dialogRef = this.dialog.open(SignUpComponent, {
-      width: '250px',
+      width: '500px',
+      height: 'auto',
+      panelClass: 'myapp-login-dialog',
+      disableClose: false,
       data: {}
     });
 
@@ -74,4 +88,16 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  // tslint:disable-next-line:typedef
+  onLogOut() {
+    this.authService.logout();
+    Swal.fire({
+      position: 'bottom-left',
+      icon: 'info',
+      title: 'successfully logout',
+      showConfirmButton: false,
+      timer: 2000
+    });
+    this.isLogged = false;
+  }
 }

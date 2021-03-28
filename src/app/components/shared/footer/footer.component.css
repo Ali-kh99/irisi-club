@@ -1,13 +1,13 @@
 #footer {
   background: var(--main-bg-color);
-  padding   : 0 0 25px 0;
-  color     : var(--heading-color);
-  font-size : 14px;
+  padding: 0 0 25px 0;
+  color: var(--heading-color);
+  font-size: 14px;
 }
 
 #footer .footer-top {
   background: var(--main-bg-color);
-  padding   : 60px 0 30px 0;
+  padding: 60px 0 30px 0;
 }
 
 
@@ -22,14 +22,14 @@
 
 #footer .footer-top .footer-info h1,
 #footer .footer-top .footer-contact h1 {
-  font-size  : 26px;
-  margin     : 0 0 20px 0;
-  padding    : 2px 0 2px 0;
+  font-size: 26px;
+  margin: 0 0 20px 0;
+  padding: 2px 0 2px 0;
   line-height: 1;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
-  color      : var(--heading-color);
-  text-align : center;
+  color: var(--heading-color);
+  text-align: center;
 }
 
 #footer .footer-top .footer-contact .content {
@@ -37,9 +37,29 @@
 }
 
 #footer .footer-top .footer-info p #footer .footer-top .footer-contact p {
-  font-size    : 14px;
-  line-height  : 24px;
+  font-size: 14px;
+  line-height: 24px;
   margin-bottom: 0;
-  font-family  : "Raleway", sans-serif;
-  color        : var(--text-color);
+  font-family: "Raleway", sans-serif;
+  color: var(--text-color);
 }
+
+/*@media (min-width: 768px) {*/
+/*  .footer-info .content p {*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*  }*/
+
+/*  .footer-info .content  {*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*  }*/
+
+/*  .footer-contact .content h1 {*/
+/*    text-align: center;*/
+/*  }*/
+
+/*  .footer-contact .content p {*/
+/*    text-align: center;*/
+/*  }*/
+/*}*/

@@ -107,10 +107,6 @@ h2 {
   font-size: 14px;
 }
 
-.social-login {
-  display: flex;
-  justify-content: center;
-}
 
 .control {
   display: block;
@@ -204,7 +200,3 @@ h2 {
   background-color: var(--main-bg-color);
 }
 
-.btn-login {
-  background: var(--main-linear-gradient);
-  color: #fff;
-}

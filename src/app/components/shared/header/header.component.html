@@ -12,20 +12,25 @@
       <ul>
         <li><a class="nav-link" routerLink="/" routerLinkActive="active">Home</a></li>
         <li class="dropdown"><a><span>Events</span>
-            <i [ngClass]="activeMobileNavbarDropdown ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"
-              (click)="toggleMobileNavbarDropdown()"></i></a>
+          <i [ngClass]="activeMobileNavbarDropdown ? 'fa fa-chevron-up' : 'fa fa-chevron-down'"
+             (click)="toggleMobileNavbarDropdown()"></i></a>
           <ul [ngClass]="activeMobileNavbarDropdown ? 'dropdown-active' : ''">
             <li><a>Up coming events</a></li>
             <li><a>Top events</a></li>
           </ul>
         </li>
-        <li><a class="nav-link"></a></li>
-        <li><a class="nav-link log-in" (click)="openDialogLogin()" style="padding: 10px 14px">
-            <fa-icon [icon]="faUser" style="padding: 0 5px 0 0;"></fa-icon>Log in
-          </a>
+        <li *ngIf="!isLogged"><a class="nav-link log-in" (click)="openDialogLogin()" style="padding: 10px 14px">
+          <fa-icon [icon]="faUser" style="padding: 0 5px 0 0;"></fa-icon>
+          Log in
+        </a>
         </li>
-        <li class="nav-btn" style="padding: 3px 12px;">
-          <a class="nav-link c-pointer" style="color: #fff"  (click)="openDialogRegister()" >Join the family</a>
+        <li *ngIf="!isLogged" class="nav-btn" style="padding: 3px 12px;">
+          <a class="nav-link c-pointer" style="color: #fff" (click)="openDialogRegister()">Join the family</a>
+        </li>
+        <li *ngIf="isLogged"><a class="nav-link log-in" (click)="onLogOut()" style="padding: 10px 14px">
+          <fa-icon style="padding: 0 5px 0 0;"></fa-icon>
+          {{login}}
+        </a>
         </li>
       </ul>
       <fa-icon [icon]="activeMobileNavbar ? faTimes : faBars" class="mobile-nav-toggle" (click)="toggleMobileNavbar()">
